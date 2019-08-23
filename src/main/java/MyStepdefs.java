@@ -84,16 +84,16 @@ public class MyStepdefs extends Utilities {
 
     @And("verify dropdown list")
     public void verifyDropdownList(Map<String, String> map) {
-        sleep(3);
         for (String each : map.keySet()) {
             String xpath = String.format(page.tabs, each);
+            Utilities.waitElementDisplay(xpath,10);
             action.moveToElement(highlight(driver.findElement(By.xpath(xpath)))).perform();
             WebElement tabXpath = driver.findElement(By.xpath(xpath));
             log(each + " is displayed: " + tabXpath.isDisplayed());
             screenShot();
-            sleep(3);
 
             String xpath2 = String.format(page.dropdown, map.get(each));
+            Utilities.waitElementDisplay(xpath2,10);
             WebElement dropdownXpath = highlight(driver.findElement(By.xpath(xpath2)));
            log(map.get(each) + " is displayed: " + dropdownXpath.isDisplayed());
             }
@@ -110,7 +110,6 @@ public class MyStepdefs extends Utilities {
 
     @Given("I login as {string}")
     public void iLoginAs(String userType) {
-        sleep(2);
         System.out.println("usertype: "+userType);
         String username = "";
         String password = "";
@@ -126,13 +125,14 @@ public class MyStepdefs extends Utilities {
         }
 
         System.out.println("username: " + username + "\npassword: " + password);
+        Utilities.waitElementDisplay(page.userNameInput,5);
         highlight(driver.findElement(By.xpath(page.userNameInput))).sendKeys(username);
         //page.userNameInput.sendKeys(username);
-        sleep(1);
+        Utilities.waitElementDisplay(page.passwordInput,5);
         highlight(driver.findElement(By.xpath(page.passwordInput))).sendKeys(password);
         //page.passwordInput.sendKeys(password);
         screenShot();
-        sleep(1);
+        Utilities.waitElementDisplay(page.submitButton,5);
         highlight(driver.findElement(By.xpath(page.submitButton))).click();
         // page.submitButton.click();
 

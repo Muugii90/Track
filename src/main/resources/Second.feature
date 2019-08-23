@@ -1,14 +1,14 @@
 Feature: verify tabs
 
-  @testtest
+
   Scenario: login as truck driver
     Given I navigate to url "http://qa3.vytrack.com/user/login"
     Given I login as "Truck driver"
     And verify tabs
       | Fleet      |
-#      | Customers  |
-#      | Activities |
-#      | System     |
+      | Customers  |
+      | Activities |
+      | System     |
 
 
   Scenario: check dropdown list as visible
@@ -28,8 +28,8 @@ Feature: verify tabs
     Examples:
       | userType      |
       | Truck driver  |
-#      | sales manager |
-#      | store manager |
+      | sales manager |
+      | store manager |
 
 
 
