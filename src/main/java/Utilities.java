@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.ExecutionException;
 
 public class Utilities {
    public static WebDriver driver;
@@ -48,6 +49,26 @@ public class Utilities {
             e.printStackTrace();
         }
     }
+    public static boolean elementDisplayed(String xpath){
+        boolean displayed=false;
+        try{
+           WebElement element= getDriver().findElement(By.xpath(xpath));
+            displayed=element.isDisplayed();
+        }catch (Throwable e){
+        }
+        return displayed;
+    }
+
+    public static void waitElementDisplay(String xpath,int maxWaitTime){
+        for(int i=0; i<maxWaitTime; i++){
+            if(elementDisplayed(xpath)){
+                break;
+            }
+            sleep(1);
+            System.out.println("Waiting for "+xpath+" | "+(i+1)+" sec");
+        }
+
+    }
 
     public static void screenShot(){
         final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
@@ -72,22 +93,20 @@ public class Utilities {
     }
 
     public static void main(String[] args) {
-        String file = "/Users/Munkhnasan/Library/Containers/com.microsoft.Excel/Data/Desktop/Names.xlsx";
-        readExcel(file,"Haku");
+        String file = "/Users/Munkhnasan/Library/Containers/com.microsoft.Excel/Data/Desktop/Book1.xlsx";
+        readExcel(file,"Mongolia");
+        readExcel("/Users/Munkhnasan/IdeaProjects/CukesVytrack/Names.xlsx", "Haku");
 
         //WorkBook
         //Sheet
         //Row
         //Cell
-
     }
-
     public static List<String> readExcel(String fileName,String name){
         List<String> list=new ArrayList<>();
         try {
             File file=new File(fileName);
             FileInputStream stream=new FileInputStream(file);
-
             XSSFWorkbook book=new XSSFWorkbook(stream);
             Sheet sheet=book.getSheet("Sheet1");
 
