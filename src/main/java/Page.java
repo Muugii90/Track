@@ -27,6 +27,7 @@ public class Page {
     public static String userNameVerify ="//li[@class='dropdown user-menu-dropdown']";
     public static String logoutCaret ="//i[@class='fa-caret-down']";
     public static String logoutButton ="//a[@class='no-hash']";
+    public static String buttons="//div[@class='btn-group']//a[contains(text(),'%s')]";
 
 
 

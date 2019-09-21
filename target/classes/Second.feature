@@ -1,6 +1,5 @@
 Feature: verify tabs
 
-
   Scenario: login as truck driver
     Given I navigate to url "http://qa3.vytrack.com/user/login"
     Given I login as "Truck driver"
@@ -14,13 +13,13 @@ Feature: verify tabs
   Scenario: check dropdown list as visible
     Given I navigate to url "http://qa3.vytrack.com/user/login"
     Given I login as "Truck driver"
-    And verify dropdown list
+    And I "verify" dropdown list
       | Fleet      | Vehicles        |
       | Customers  | Accounts        |
       | Activities | Calendar Events |
       | System     | User Management |
 
-  @testtest
+
   Scenario Outline: login as different users
   Given I navigate to url "http://qa3.vytrack.com/user/login"
     Given  I login as "<userType>"
@@ -30,6 +29,7 @@ Feature: verify tabs
       | Truck driver  |
       | sales manager |
       | store manager |
+
 
 
 

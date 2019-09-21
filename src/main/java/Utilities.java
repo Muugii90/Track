@@ -110,7 +110,7 @@ public class Utilities {
             XSSFWorkbook book=new XSSFWorkbook(stream);
             Sheet sheet=book.getSheet("Sheet1");
 
-            for(int i=0; i<sheet.getLastRowNum()+1;i++){
+            for(int i=0; i<=sheet.getLastRowNum();i++){
                 Row row=sheet.getRow(i);
                 if(row==null){
                     continue;

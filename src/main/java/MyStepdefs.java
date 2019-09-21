@@ -15,13 +15,13 @@ public class MyStepdefs extends Utilities {
     WebDriver driver = getDriver();
     Page page = new Page();
     Actions action = new Actions(driver);
+    Impl impl=new Impl();
 
     @Given("I navigate to url {string}")
     public void iNavigateToUrl(String url) {
         driver.get(url);
           screenShot();
     }
-
 
     @Then("I validate page title of {string}")
     public void iValidatePageTitleOf(String expectedTitle) {
@@ -82,22 +82,8 @@ public class MyStepdefs extends Utilities {
         }
     }
 
-    @And("verify dropdown list")
-    public void verifyDropdownList(Map<String, String> map) {
-        for (String each : map.keySet()) {
-            String xpath = String.format(page.tabs, each);
-            Utilities.waitElementDisplay(xpath,10);
-            action.moveToElement(highlight(driver.findElement(By.xpath(xpath)))).perform();
-            WebElement tabXpath = driver.findElement(By.xpath(xpath));
-            log(each + " is displayed: " + tabXpath.isDisplayed());
-            screenShot();
 
-            String xpath2 = String.format(page.dropdown, map.get(each));
-            Utilities.waitElementDisplay(xpath2,10);
-            WebElement dropdownXpath = highlight(driver.findElement(By.xpath(xpath2)));
-           log(map.get(each) + " is displayed: " + dropdownXpath.isDisplayed());
-            }
-        }
+
     @And("I should verify driver {string}")
     public void iShouldVerifyDriver(String expected) {
         sleep(3);
@@ -138,7 +124,10 @@ public class MyStepdefs extends Utilities {
 
     }
 
-
+    @And("I {string} dropdown list")
+    public void iDropdownList(String actionType,Map<String,String> map) {
+        impl.verifyClickDropdown(actionType,map);
+    }
 
 }
 
