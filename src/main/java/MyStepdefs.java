@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+
 import java.util.*;
 
 public class MyStepdefs extends Utilities {
@@ -50,7 +51,7 @@ public class MyStepdefs extends Utilities {
         sleep(3);
     }
 
-    @And("I get all the values from table")
+    @And("I get all th e values from table")
     public void iGetAllTheValuesFromTable() {
         Set<String> set = new HashSet<>();
         List<WebElement> list = driver.findElements(By.xpath(page.carsList));
@@ -81,8 +82,6 @@ public class MyStepdefs extends Utilities {
             System.out.println(web.isDisplayed());
         }
     }
-
-
 
     @And("I should verify driver {string}")
     public void iShouldVerifyDriver(String expected) {
@@ -127,7 +126,36 @@ public class MyStepdefs extends Utilities {
     @And("I {string} dropdown list")
     public void iDropdownList(String actionType,Map<String,String> map) {
         impl.verifyClickDropdown(actionType,map);
+        sleep(3);
     }
+
+    @Given("I click {string} button")
+    public void i_click_button(String string) {
+        impl.clickButton(string);
+    }
+
+    @Given("I set the start date as {string}")
+    public void i_set_the_start_date_as(String string) {
+        impl.selectDate(string);
+
+    }
+
+    @Then("I validate the end date is {string}")
+    public void i_validate_the_end_date_is(String string) {
+        impl.verifyDate(string);
+
+    }
+
+    @And("I change the start time to {int} hours from now")
+    public void iChangeTheStartTimeToHoursFromNow(int hour) {
+
+    }
+
+
+    @Then("I verify that time changes {int} hours")
+    public void iVerifyThatTimeChangesHours(int arg0) {
+    }
+
 
 }
 

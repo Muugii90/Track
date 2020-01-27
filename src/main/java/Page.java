@@ -28,6 +28,12 @@ public class Page {
     public static String logoutCaret ="//i[@class='fa-caret-down']";
     public static String logoutButton ="//a[@class='no-hash']";
     public static String buttons="//div[@class='btn-group']//a[contains(text(),'%s')]";
+    public static String date = "(//div[@class='fields-row']/input)[%s]";
+    public static String timeBox = "(//input[@placeholder='time'])[%s]";
+
+
+
+    
 
 
 

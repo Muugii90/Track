@@ -1,18 +1,13 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:DateTime.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:FirstFeature.feature");
 formatter.feature({
-  "name": "Date and Time Tests",
+  "name": "First feature file",
   "description": "",
   "keyword": "Feature"
 });
-formatter.scenario({
-  "name": "Date auto adjust",
+formatter.background({
+  "name": "",
   "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@testtest"
-    }
-  ]
+  "keyword": "Background"
 });
 formatter.before({
   "status": "passed"
@@ -28,8 +23,18 @@ formatter.embedding("image/png", "embedded0.png");
 formatter.result({
   "status": "passed"
 });
+formatter.scenario({
+  "name": "login as truck driver",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@testtest"
+    }
+  ]
+});
 formatter.step({
-  "name": "I login as \"store manager\"",
+  "name": "I login as \"Truck driver\"",
   "keyword": "Given "
 });
 formatter.match({
@@ -40,76 +45,118 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I \"click\" dropdown list",
-  "rows": [
-    {
-      "cells": [
-        "Activities",
-        "Calendar Events"
-      ]
-    }
-  ],
-  "keyword": "And "
+  "name": "I validate page title of \"Dashboard\"",
+  "keyword": "Then "
 });
 formatter.match({
-  "location": "MyStepdefs.iDropdownList(String,String,String\u003e)"
+  "location": "MyStepdefs.iValidatePageTitleOf(String)"
 });
-formatter.write("Sun Aug 25 19:29:11 EDT 2019 INFO: Activities is displayed: true");
-formatter.embedding("image/png", "embedded2.png");
-formatter.write("Sun Aug 25 19:29:12 EDT 2019 INFO: Calendar Events is displayed: true");
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I click \"Create Calendar event\" button",
+  "name": "I mouseover to \"Fleet\" tab",
   "keyword": "And "
 });
 formatter.match({
-  "location": "MyStepdefs.i_click_button(String)"
+  "location": "MyStepdefs.iMouseoverToTab(String)"
 });
 formatter.result({
-  "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat MyStepdefs.i_click_button(MyStepdefs.java:132)\n\tat ✽.I click \"Create Calendar event\" button(file:DateTime.feature:10)\n",
-  "status": "pending"
+  "status": "passed"
 });
 formatter.step({
-  "name": "I set the start date as \"Sep 25, 2019\"",
+  "name": "I choose \"Vehicles\"",
   "keyword": "And "
 });
 formatter.match({
-  "location": "MyStepdefs.i_set_the_start_date_as(String)"
+  "location": "MyStepdefs.iChoose(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "I validate the end date is \"Sep 25, 2019\"",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "MyStepdefs.i_validate_the_end_date_is(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "I set the start date as \"today\u0027s date\"",
+  "name": "I get all the values from table",
   "keyword": "And "
 });
 formatter.match({
-  "location": "MyStepdefs.i_set_the_start_date_as(String)"
+  "location": "MyStepdefs.iGetAllTheValuesFromTable()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "I validate the end date is \"today\u0027s date\"",
-  "keyword": "Then "
+  "name": "I get all the values from the \"3\" the row",
+  "keyword": "And "
 });
 formatter.match({
-  "location": "MyStepdefs.i_validate_the_end_date_is(String)"
+  "location": "MyStepdefs.iGetAllTheValuesFromTheTheRow(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.background({
+  "name": "",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.before({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I navigate to url \"http://qa3.vytrack.com/user/login\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "MyStepdefs.iNavigateToUrl(String)"
+});
+formatter.embedding("image/png", "embedded2.png");
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "verify login username",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@testtest"
+    }
+  ]
+});
+formatter.step({
+  "name": "I navigate to url \"http://qa3.vytrack.com/user/login\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "MyStepdefs.iNavigateToUrl(String)"
+});
+formatter.embedding("image/png", "embedded3.png");
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I login as \"Truck driver\"",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "MyStepdefs.iLoginAs(String)"
+});
+formatter.embedding("image/png", "embedded4.png");
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I should verify driver \"Trudie Hansen\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "MyStepdefs.iShouldVerifyDriver(String)"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.after({
   "status": "passed"

@@ -3,6 +3,7 @@ Feature: First feature file
   Background:
     Given I navigate to url "http://qa3.vytrack.com/user/login"
 
+  @testtest
   Scenario: login as truck driver
     Given I login as "Truck driver"
     Then I validate page title of "Dashboard"
@@ -11,7 +12,7 @@ Feature: First feature file
     And I get all the values from table
     And I get all the values from the "3" the row
 
-
+  @testtest
   Scenario: verify login username
     Given I navigate to url "http://qa3.vytrack.com/user/login"
     Given I login as "Truck driver"

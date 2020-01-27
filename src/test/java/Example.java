@@ -16,20 +16,6 @@ import java.util.Map;
 
 public class Example {
     public static void main(String[] args) {
-//        WebDriver driver=Utilities.getDriver();
-//        driver.get("https://www.amazon.com/");
-
-//        Select select =new Select(driver.findElement(By.xpath("//select[@id='searchDropdownBox']")));
-//        select.selectByVisibleText("Amazon Fresh");
-//        select.selectByIndex(2);
-//
-//       List<WebElement> list= select.getOptions();
-//        System.out.println("Select size: "+list.size());
-//        System.out.println();
-//       for(WebElement each: list){
-//           System.out.println(each.getText());
-//       }
-//        driver.quit();
 
             for(int i=0; i< 100; i++){
                 if(i%7==0){

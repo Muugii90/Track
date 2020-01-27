@@ -94,7 +94,7 @@ public class Utilities {
 
     public static void main(String[] args) {
         String file = "/Users/Munkhnasan/Library/Containers/com.microsoft.Excel/Data/Desktop/Book1.xlsx";
-        readExcel(file,"Mongolia");
+        readExcel(file,"Korea");
         readExcel("/Users/Munkhnasan/IdeaProjects/CukesVytrack/Names.xlsx", "Haku");
 
         //WorkBook
@@ -119,10 +119,7 @@ public class Utilities {
                     if(row.getCell(0).toString().equals(name)){
                         list.add(row.getCell(j).toString());
                     }
-//                    String cellValue=row.getCell(j).toString();
-//                    if(cellValue.contains(".")){
-//                        int index=cellValue.indexOf(".");
-//                        cellValue=cellValue.substring(0,index);
+
                     }
                 }
             System.out.println(list);
@@ -136,3 +133,5 @@ public class Utilities {
         return list;
     }
 }
+
+

@@ -6,14 +6,15 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(
         plugin = {"html:target/reports",
-                "rerun:target/Failed/rerun.txt:"},
-        features = {"/Users/Munkhnasan/IdeaProjects/CukesVytrack/src/main/resources"},
+                "rerun:target/Failed/rerun.txt",
+                "json:target/cucumber.json"},
+        features = {"/Users/Munkhnasan/IdeaProjects/CukesVytrack/src/main/resources/"},
         //features = {"@target/Failed/rerun.txt"},
-      tags = {"@testtest"},
+        tags = {"@testtest"},
         dryRun = false
 
 )
 public class FirstRunner {
 
-    }
+}
 
