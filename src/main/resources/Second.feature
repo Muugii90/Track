@@ -9,7 +9,7 @@ Feature: verify tabs
       | Activities |
       | System     |
 
-
+@test
   Scenario: check dropdown list as visible
     Given I navigate to url "http://qa3.vytrack.com/user/login"
     Given I login as "Truck driver"

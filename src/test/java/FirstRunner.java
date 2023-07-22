@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json"},
         features = {"/Users/Munkhnasan/IdeaProjects/CukesVytrack/src/main/resources/"},
         //features = {"@target/Failed/rerun.txt"},
-        tags = {"@testtest"},
+        tags = {"@test"},
         dryRun = false
 
 )
